@@ -1,0 +1,23 @@
+<form>
+  <h1>Kanban Board</h1>
+  <input
+    type="text"
+    name="taskDetails"
+    #taskName
+    [(ngModel)]="taskDetails"
+    required
+    placeholder="Start writing to add task..."
+  />
+  &nbsp;
+  <button
+    class="btn btn-success"
+    type="submit"
+    [disabled]="taskDetails === ''"
+    (click)="clickOnAdd()"
+  >
+    Add Task
+  </button>
+</form>
+<ng-template #displayText>
+  <p>Plaese Enter Task Details first</p>
+</ng-template>

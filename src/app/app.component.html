@@ -1,0 +1,57 @@
+<div class="dashboard">
+  <app-add-task (taskAdded)="addedItem($event)"></app-add-task>
+  <div class="task-container">
+    <h2>To do</h2>
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[implementingList, doneList]"
+      class="task-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="task-box" *ngFor="let item of todo; let idx = index" cdkDrag>
+        {{ item }}
+        <button (click)="removeFromTodo(idx)">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="task-container">
+    <h2>Implementing</h2>
+    <div
+      cdkDropList
+      #implementingList="cdkDropList"
+      [cdkDropListData]="implementing"
+      [cdkDropListConnectedTo]="[todoList, doneList]"
+      class="task-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div
+        class="task-box"
+        *ngFor="let item of implementing; let idx = index"
+        cdkDrag
+      >
+        {{ item }}
+        <button (click)="removeFromImplementing(idx)">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="task-container">
+    <h2>Done</h2>
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="[todoList, implementingList]"
+      class="task-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="task-box" *ngFor="let item of done; let idx = index" cdkDrag>
+        {{ item }}
+        <button (click)="removeFromDone(idx)">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>

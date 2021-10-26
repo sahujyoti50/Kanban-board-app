@@ -1,0 +1,37 @@
+form {
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 70rem;
+  max-width: 100%;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 1px 1px 8px rgb(19, 3, 54);
+  font-family: "Lato", sans-serif;
+}
+h1 {
+  font-family: "Arial Black", sans-serif;
+  font-size: 40px;
+  letter-spacing: -1px;
+  background-color: rgb(19, 3, 54);
+  color: white;
+}
+
+input {
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 20rem;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 1px solid #40005d;
+  background-color: rgb(19, 3, 54);
+  color: white;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
